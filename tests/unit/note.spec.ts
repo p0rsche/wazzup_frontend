@@ -13,6 +13,14 @@ const note = {
   updated_at: new Date(),
 };
 
+const author = {
+  id: 1,
+  avatar: '',
+  login: 'test',
+  fullname: 'Vasya Kot',
+  email: 'thecat@vasya.me'
+}
+
 describe("Note actions", () => {
   let actions;
   let store;
@@ -30,6 +38,7 @@ describe("Note actions", () => {
     });
     propsData = {
       note,
+      author
     };
   });
 

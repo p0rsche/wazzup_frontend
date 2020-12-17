@@ -5,10 +5,13 @@ import NavBar from "@/components/NavBar.vue";
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-test("should render navbar", () => {
-  const wrapper = shallowMount(NavBar);
-  expect(wrapper).toBeDefined();
-});
+const user = {
+  id: 1,
+  avatar: '',
+  login: 'test',
+  fullname: 'Vasya Kot',
+  email: 'thecat@vasya.me'
+}
 
 describe("Navbar actions", () => {
   let actions;
@@ -21,7 +24,15 @@ describe("Navbar actions", () => {
     };
     store = new Vuex.Store({
       actions,
+      state: {
+        user
+      },
     });
+  });
+
+  it("should render navbar", () => {
+    const wrapper = shallowMount(NavBar, { store, localVue });
+    expect(wrapper).toBeDefined();
   });
 
   it('dispatches openModal when clicked "Add new Note"', () => {
