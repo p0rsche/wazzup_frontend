@@ -22,7 +22,7 @@
               <a
                 href="#"
                 @click.prevent="addNewNote()"
-                class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900"
+                class="add-new-note px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900"
                 >Add new note</a
               >
             </div>
@@ -56,7 +56,7 @@
               <a
                 href="#"
                 @click.prevent="signout()"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                class="link-sign-out block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
                 >Sign out</a
               >
@@ -84,7 +84,7 @@ export default class NavBar extends Vue {
     this.$store
       .dispatch("logout")
       .then(() => this.$router.push({ name: "login" }))
-      .catch((e) => console.log(e));
+      .catch((e) => {/*console.log(e)*/} );
   }
 
   hide(): void {

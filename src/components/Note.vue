@@ -49,10 +49,10 @@
             'opacity-50': switchDisabled,
           }"
         >
-          <label htmlfor="toogleA" class="flex items-center cursor-pointer">
+          <label htmlfor="share-note" class="flex items-center cursor-pointer">
             <div class="flex items-center">
               <input
-                id="toogleA"
+                id="share-note"
                 type="checkbox"
                 class="hidden"
                 :checked="isShared"
@@ -87,7 +87,7 @@
       <div class="mr-2">
         <button
           title="Edit note"
-          class="bg-indigo-400 hover:bg-indigo-500 p-2 rounded-full shadow-md flex justify-center items-center"
+          class="btn-edit-note bg-indigo-400 hover:bg-indigo-500 p-2 rounded-full shadow-md flex justify-center items-center"
           @click="editNote(note.id)"
         >
           <svg
@@ -111,7 +111,7 @@
         <button
           title="Delete note"
           @click="deleteNote(note.id)"
-          class="bg-indigo-400 hover:bg-indigo-500 p-2 rounded-full shadow-md flex justify-center items-center"
+          class="btn-delete-note bg-indigo-400 hover:bg-indigo-500 p-2 rounded-full shadow-md flex justify-center items-center"
         >
           <svg
             class="text-white toggle__lock w-6 h-6"
