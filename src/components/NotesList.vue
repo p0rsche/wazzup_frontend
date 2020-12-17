@@ -4,7 +4,7 @@
   >
     <div class="bg-white w-full md:max-w-4xl rounded-lg shadow">
       <div v-if="sortedNotes.length > 0" class="px-6">
-        <Note v-for="(item, i) in sortedNotes" :key="i" :note="item" />
+        <Note v-for="(item, i) in sortedNotes" :key="i" :note="item" :author="user" />
         <Pagination v-if="pagination.total > 10" :pagination="pagination" @navigate="onNavigate"/>
       </div>
       <div v-else class="px-6">
@@ -51,7 +51,7 @@ import Loader from "@/components/Loader.vue";
     Pagination,
   },
   computed: {
-    ...mapState(["isRequestsProcessing", "pagination"]),
+    ...mapState(["isRequestsProcessing", "pagination", "user"]),
     ...mapGetters(['sortedNotes']),
   },
 })
